@@ -1,12 +1,23 @@
+/*
+============================================
+; Title:  app.js
+; Author: Professor Krasso
+; Date: 12/4/20
+; Modified by: Rochelle Markham
+; Description: nodebucket app
+;===========================================
+*/
+
 /**
  * Require statements
  */
 const express = require('express');
 const http = require('http');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');                        
+const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const employee = require('./db-models/employee');
 
 /**
  * App configurations
@@ -23,8 +34,8 @@ app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')));
  */
 const port = 3000; // server port
 
-// TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/nodebucket?retryWrites=true&w=majority';
+// mongoDB connection string
+const conn = 'mongodb+srv://RMarkham:Camilla2008@nodebucket.fyzgw.mongodb.net/nodebucket?retryWrites=true&w=majority';
 
 /**
  * Database connection
@@ -40,8 +51,19 @@ mongoose.connect(conn, {
 }); // end mongoose connection
 
 /**
- * API(s) go here...
+ * FindEmployeeById API
  */
+  app.get('/api/employees/:empId', function(req, res, next) {
+    employee.findOne({'empId': req.params.empId}, function(err, employee) {
+      if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(employee);
+      res.json(employee);
+    }
+  })
+});
 
 /**
  * Create and start server
