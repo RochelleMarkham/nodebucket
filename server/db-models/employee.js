@@ -8,12 +8,15 @@
 
 //requires mongoose
 const mongoose = require ('mongoose');
+const Item = require('./item')
 
 //sets up employee schema
 let employeeSchema = mongoose.Schema({
   empId:      {type: String, unique: true, dropDups: true},
   firstname:  {type: String},
-  lastname:   {type: String}
+  lastname:   {type: String},
+  todo: [Item],
+  done: [Item]
 });
 
 //exports schema to MongoDB
