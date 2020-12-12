@@ -8,6 +8,7 @@
 
 const mongoose = require('mongoose');
 
+//sets up schema for tasks
 let itemSchema = mongoose.Schema({
   text: {type: String}
 });

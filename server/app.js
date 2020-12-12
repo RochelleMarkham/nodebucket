@@ -138,7 +138,8 @@ app.put('/api/employees/:empId/tasks', function(req, res, next) {
           return next(err);
         } else {
           console.log(employee);
-          res.json(employee);        }
+          res.json(employee);
+        }
       })
     }
   })
