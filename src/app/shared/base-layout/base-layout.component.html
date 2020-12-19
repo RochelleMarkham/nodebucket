@@ -6,10 +6,11 @@
         <!-- navbar container -->
         <div class="navbar-container">
           <!-- logo -->
-          <img src= "../../../assets/nodebucket_logo.png" height="60"/>
-          <button class="logo" routerLink="/" mat-button>nodebucket</button>
+          <button class="logo" routerLink="/nodebucket" mat-button>
+            <img src= "../../../assets/nodebucket_logo.png" height="60px"/>
+            nodebucket</button>
           <button class="navbar-link" routerLink="/" mat-button>Home</button>
-          <button class="navbar-link" mat-button>About</button>
+          <button class="navbar-link" routerLink="/about" mat-button>About</button>
           <!--Sign out button-->
           <button *ngIf = "isLoggedIn" class="navbar-link" (click)="signout()" mat-button>Sign out</button>
         </div>

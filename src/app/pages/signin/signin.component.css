@@ -2,15 +2,23 @@
   margin-top: 15%;
   width: 50%;
   margin-left: 25%;
+  background-color: #20bde8;
 }
+
 .signin-title {
   text-align: center;
   font-size: 48px;
   font-weight: lighter;
+  color: black;
 }
 .signin-subtitle {
   text-align: center;
+  color: black;
 }
 .error-message {
   color: #DF546A;
+}
+
+mat-card {
+  background-color:#5bc5e3;
 }
