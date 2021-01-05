@@ -11,6 +11,10 @@
     "start": "ng serve",
     "localhost": "ng build && node ./server/app.js"
   },
+    "engines": {
+      "node": ">=13.8.0",
+      "npm": ">=6.14.8"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.0",
