@@ -18,7 +18,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 const employee = require('./db-models/employee');
-const { isTemplateExpression } = require('typescript');
 
 /**
  * App configurations
@@ -33,7 +32,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')));
 /**
  * Variables
  */
-const port = 8000; // server port
+const port = 3000; // server port
 
 // mongoDB connection string
 const conn = 'mongodb+srv://RMarkham:Camilla2008@nodebucket.fyzgw.mongodb.net/nodebucket?retryWrites=true&w=majority';
