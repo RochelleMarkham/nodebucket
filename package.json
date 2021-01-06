@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server": "nodemon app.js",
-    "start": "ng serve",
+    "start": "ng serve && node server/app.js",
     "localhost": "ng build"
   },
   "private": true,
